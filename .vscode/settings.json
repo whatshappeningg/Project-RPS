@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "gitignore",
-        "app.py"
+        "app.py",
+        "README"
     ]
 }
