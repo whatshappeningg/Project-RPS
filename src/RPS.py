@@ -68,7 +68,18 @@ def get_computer_action():
     global game_result
     global user_action
     global computer_action
-    computer_selection = random.randint(0, len(GameAction) - 1)
+    if game_result == None:
+        computer_selection = 1
+
+    elif game_result == GameResult.Defeat:
+        computer_selection = user_action.value
+
+    elif game_result == GameResult.Victory:
+        computer_selection = GameAction([action.value for action in GameAction if action not in [computer_action, user_action]][0]).value
+
+    elif game_result == GameResult.Tie:
+        computer_selection = random.randint(0, len(GameAction) - 1)
+
     computer_action = GameAction(computer_selection)
     print(f"Computer picked {computer_action.name}.")
 
