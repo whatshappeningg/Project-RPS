@@ -3,6 +3,12 @@
         "gitignore",
         "app.py",
         "README",
-        "RPS"
-    ]
+        "RPS",
+        "test"
+    ],
+    "python.testing.pytestArgs": [
+        "src"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }

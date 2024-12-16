@@ -68,6 +68,7 @@ def get_computer_action():
     global user_action
     global computer_action
 
+
      # Computer picks Paper to start
     if game_result == None:
         computer_selection = 1
