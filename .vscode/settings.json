@@ -4,7 +4,8 @@
         "app.py",
         "README",
         "RPS",
-        "test"
+        "test",
+        "RPSLS"
     ],
     "python.testing.pytestArgs": [
         "src"
