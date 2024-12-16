@@ -24,11 +24,9 @@ Victories = {
     GameAction.Scissors: GameAction.Rock
 }
 
-def assess_game():
+def assess_game(user_action, computer_action):
 
     global game_result
-    global user_action
-    global computer_action
 
     if user_action == computer_action:
         print(f"User and computer picked {user_action.name}. Draw game!")
@@ -65,9 +63,11 @@ def assess_game():
 
 
 def get_computer_action():
+
     global game_result
     global user_action
     global computer_action
+
     if game_result == None:
         computer_selection = 1
 
@@ -75,7 +75,7 @@ def get_computer_action():
         computer_selection = user_action.value
 
     elif game_result == GameResult.Victory:
-        computer_selection = GameAction([action.value for action in GameAction if action not in [computer_action, user_action]][0]).value
+        computer_selection = GameAction([action.value for action in GameAction if action not in [computer_action, user_action]][0])
 
     elif game_result == GameResult.Tie:
         computer_selection = random.randint(0, len(GameAction) - 1)
@@ -104,18 +104,17 @@ def play_another_round():
 
 
 def main():
-    global user_action
-    global computer_action
     while True:
+
         try:
-            user_action = get_user_action()
+            get_user_action()
         except ValueError:
             range_str = f"[0, {len(GameAction) - 1}]"
             print(f"Invalid selection. Pick a choice in range {range_str}!")
             continue
 
-        computer_action = get_computer_action()
-        assess_game()
+        get_computer_action()
+        assess_game(user_action, computer_action)
 
         if not play_another_round():
             break
