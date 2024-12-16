@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "gitignore",
         "app.py",
-        "README"
+        "README",
+        "RPS"
     ]
 }
