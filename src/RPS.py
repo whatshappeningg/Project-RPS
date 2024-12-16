@@ -68,15 +68,19 @@ def get_computer_action():
     global user_action
     global computer_action
 
+     # Computer picks Paper to start
     if game_result == None:
         computer_selection = 1
 
+    # If computer won, computer picks last action the user picked
     elif game_result == GameResult.Defeat:
         computer_selection = user_action.value
 
+    # If computer lost, computer picks the action that did not show up
     elif game_result == GameResult.Victory:
         computer_selection = GameAction([action.value for action in GameAction if action not in [computer_action, user_action]][0])
 
+    # If it is a Draw game, computer picks random action
     elif game_result == GameResult.Tie:
         computer_selection = random.randint(0, len(GameAction) - 1)
 
