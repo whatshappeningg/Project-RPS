@@ -1,6 +1,9 @@
 import random
 from enum import IntEnum
 
+game_result = None
+user_action = None
+computer_action = None
 
 class GameAction(IntEnum):
 
@@ -21,9 +24,11 @@ Victories = {
     GameAction.Scissors: GameAction.Rock
 }
 
-def assess_game(user_action, computer_action):
+def assess_game():
 
-    game_result = None
+    global game_result
+    global user_action
+    global computer_action
 
     if user_action == computer_action:
         print(f"User and computer picked {user_action.name}. Draw game!")
@@ -60,6 +65,9 @@ def assess_game(user_action, computer_action):
 
 
 def get_computer_action():
+    global game_result
+    global user_action
+    global computer_action
     computer_selection = random.randint(0, len(GameAction) - 1)
     computer_action = GameAction(computer_selection)
     print(f"Computer picked {computer_action.name}.")
@@ -68,6 +76,8 @@ def get_computer_action():
 
 
 def get_user_action():
+    global user_action
+    global computer_action
     # Scalable to more options (beyond rock, paper and scissors...)
     game_choices = [f"{game_action.name}[{game_action.value}]" for game_action in GameAction]
     game_choices_str = ", ".join(game_choices)
@@ -83,7 +93,8 @@ def play_another_round():
 
 
 def main():
-
+    global user_action
+    global computer_action
     while True:
         try:
             user_action = get_user_action()
@@ -93,7 +104,7 @@ def main():
             continue
 
         computer_action = get_computer_action()
-        assess_game(user_action, computer_action)
+        assess_game()
 
         if not play_another_round():
             break
