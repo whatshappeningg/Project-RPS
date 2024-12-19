@@ -50,7 +50,7 @@ En términos del RPS (o RPSLS, ya que la estrategia a seguir es la misma), el mu
 Las reglas a seguir asignadas al agente (función `get_computer_action`) son simples pero efectivas:
 1. Si no hay registrada ninguna partida anterior, el agente empieza sacando papel.
 2. Si el agente ha ganado la partida anterior, elige lo último que sacó el usuario.
-3. Si el agente ha perdido la partida anterior, elige la opción que ninguno sacó. (En el caso de RPSLS, la primera opción según la clase `GameAction`)
+3. Si el agente ha perdido la partida anterior, elige la opción que ninguno sacó. (En el caso de RPSLS, una aleatoria)
 4. Si se da un empate, elige de manera aleatoria.
 
 La toma de decisión se basa en el estado actual de la partida y en los patrones dados al agente.

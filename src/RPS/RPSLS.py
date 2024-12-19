@@ -34,7 +34,7 @@ def assess_game(user_action, computer_action):
     global game_result
 
     if user_action == computer_action:
-        print(f"User and computer picked {user_action}. Draw game!")
+        print(f"User and computer picked {user_action.name}. Draw game!")
         game_result = GameResult.Tie
 
     # You picked Rock
@@ -132,7 +132,8 @@ def get_computer_action():
 
     # If computer lost, computer picks the action that did not show up
     elif game_result == GameResult.Victory:
-        computer_selection = GameAction([action.value for action in GameAction if action not in [computer_action, user_action]][0])
+        was_not_picked = [action.value for action in GameAction if action not in [computer_action, user_action]]
+        computer_selection = GameAction(was_not_picked[(random.randint(0, len(was_not_picked) - 1))])
 
     # If it is a Draw game, computer picks random action
     elif game_result == GameResult.Tie:
