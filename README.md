@@ -56,3 +56,21 @@ Las reglas a seguir asignadas al agente (función `get_computer_action`) son sim
 La toma de decisión se basa en el estado actual de la partida y en los patrones dados al agente.
 
 ## Proceso de instalación
+Pasos a seguir para poder utilizar esta aplicación de manera local:
+
+1. Se copia el enlace del repositorio en `<>Code` -> `HTTPS` . También se puede descargar la carpeta ZIP.
+2. En una terminal del dispositivo, se crea una carpeta donde se guardará el repositorio.
+	```
+	mkdir <nombre de la carpeta>
+	cd <nombre de la carpeta>
+	```
+3. En la terminal, dentro de la carpeta creada, se pega el enlace.
+	```
+	git clone <url del repositorio>
+	```
+4. En el repositorio se accede a la carpeta `src` en `Project-RPS` y se inicia el código RPS o RPSLS.
+	```
+	cd Project-RPS/src/
+	python3 RPS.py
+	python3 RPSLS.py
+	```
