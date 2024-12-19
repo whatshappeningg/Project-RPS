@@ -41,5 +41,18 @@ Entorno | Observable | Agentes | Determinista | Episódico | Estático | Discret
 	El objetivo del agente es directamente contrario al del usuario. El agente es recompensado cuando gana o, que en este caso es lo mismo, cuando el usuario pierde.
 
 ## Identificación del tipo de agente y estructura
+El **agente reflexivo basado en modelos** conserva un estado interno del mundo con un historial temporal de la parte del mundo que no se puede observar. Esta característica hace al agente eficaz ante entornos parcialmente observables, como es el caso.
+
+![Estructura del agente](./doc/AgenteRBM.png)
+
+En términos del RPS (o RPSLS, ya que la estrategia a seguir es la misma), el mundo (la partida) puede variar entre tres estados: victoria, derrota o empate (en el código, la variable `game_result` ). La parte no observable sería lo que va a sacar el usuario a continuación, así que esta clase de agente puede almacenar un pequeño historial del desarrollo de las partidas anteriores, en concreto de la inmediatamente anterior (la variable `user_action`). Estos dos factores son los que el agente tiene en cuenta al definir el estado del mundo.
+
+Las reglas a seguir asignadas al agente (función `get_computer_action`) son simples pero efectivas:
+1. Si no hay registrada ninguna partida anterior, el agente empieza sacando papel.
+2. Si el agente ha ganado la partida anterior, elige lo último que sacó el usuario.
+3. Si el agente ha perdido la partida anterior, elige la opción que ninguno sacó. (En el caso de RPSLS, la primera opción según la clase `GameAction`)
+4. Si se da un empate, elige de manera aleatoria.
+
+La toma de decisión se basa en el estado actual de la partida y en los patrones dados al agente.
 
 ## Proceso de instalación
