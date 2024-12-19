@@ -5,6 +5,7 @@ Project-RPS
 * [Especificación del entorno](#especificación-del-entorno)
 * [Identificación del tipo de agente y estructura](#identificación-del-tipo-de-agente-y-estructura)
 * [Proceso de instalación](#proceso-de-instalación)
+* [Webgrafía](#webgrafía)
 
 ## Propuesta
 Este proyecto consiste en crear un programa que ejecute el popular juego de piedra papel o tijera (será referenciado como RPS) y sea capaz de acumular la mayoría de victorias contra un usuario. Si se tratara de un juego de azar la probabilidad de ganar sería una de tres, pero, consciente o inconscientemente, siempre se sigue una estrategia. Una de estas mismas es la que se pretende descifrar en la propuesta siguiente.
@@ -74,3 +75,9 @@ Pasos a seguir para poder utilizar esta aplicación de manera local:
 	python3 RPS.py
 	python3 RPSLS.py
 	```
+
+## Webgrafía
+
+Russell, Peter. _ARTIFICIAL INTELLIGENCE : A Modern Approach_, Global Edition. S.L., Pearson Education Limited, 2021.
+
+Enlace de la estrategia ([Video](https://youtu.be/-p1Rsr5scDo?si=4lhIdhNIAH5_c54p))
