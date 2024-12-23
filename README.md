@@ -15,7 +15,7 @@ En el contenido de este proyecto se encuentra una tabla resumen de las caracter�
 
 Entorno | Observable | Agentes | Determinista | Episódico | Estático | Discreto | Conocido | Adverso |
 :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
- RPS | Parcial | Multi-agente | Estocástico | Secuencial | Estático |  Discreto |  Conocido | Adverso |
+ RPS | Parcial | Multi-agente | Estocástico | Secuencial | Estático | Discreto |  Conocido | Adverso |
 
 **· Parcialmente visible:**
 	No todos los factores que influyen en el resultado son visibles en el momento de tomar la decisión. El agente no sabe (con exactitud) qué opción va a escoger el usuario cuando tiene que decidir qué sacar.
@@ -44,7 +44,7 @@ Entorno | Observable | Agentes | Determinista | Episódico | Estático | Discret
 ## Identificación del tipo de agente y estructura
 El **agente reflexivo basado en modelos** conserva un estado interno del mundo con un historial temporal de la parte del mundo que no se puede observar. Esta característica hace al agente eficaz ante entornos parcialmente observables, como es el caso.
 
-![Estructura del agente](./doc/AgenteRBM.png)
+![Estructura del agente](./doc/AgenteRPS.png)
 
 En términos del RPS (o RPSLS, ya que la estrategia a seguir es la misma), el mundo (la partida) puede variar entre tres estados: victoria, derrota o empate (en el código, la variable `game_result` ). La parte no observable sería lo que va a sacar el usuario a continuación, así que esta clase de agente puede almacenar un pequeño historial del desarrollo de las partidas anteriores, en concreto de la inmediatamente anterior (la variable `user_action`). Estos dos factores son los que el agente tiene en cuenta al definir el estado del mundo.
 
